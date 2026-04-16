@@ -1,0 +1,159 @@
+ul{
+    list-style-type: none; 
+}
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #000000; 
+    color: #ffffff;
+}
+
+header {
+    background-color: #1a1a1a; 
+    padding: 20px;
+    border-bottom: 2px solid #007bff;
+    display: flex;
+    
+    justify-content: space-between;
+    
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+header h1 {
+    color: #007bff;
+    margin: 0;
+}
+
+
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a, header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover, header a:hover {
+    color: #007bff;
+    text-shadow: 0 0 8px #007bff; 
+}
+
+.contenedor-proyectos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-areas:
+        "principal principal lateral1"
+        "principal principal lateral2";
+    gap: 20px;;
+    margin-top: 20px;
+}
+
+.proyecto-1 {
+    grid-area: principal;
+}
+
+.proyecto-2 {
+    grid-area: lateral1;
+}
+.proyecto-3 {
+    grid-area: lateral2;
+
+}
+.proyecto-1, .proyecto-2, .proyecto-3 {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.1);
+}
+
+
+section {
+    background-color: #1a1a1a; /* Gris oscuro para las secciones */
+    margin: 20px auto;
+    padding: 25px;
+    max-width: 800px;
+    border-radius: 15px; /* Bordes redondeados */
+    border: 1px solid #333;
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2); /* Sombra azul suave */
+}
+
+h2 {
+    color: #007bff;
+    border-bottom: 1px solid #007bff;
+    display: inline-block;
+}
+
+img {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 15px auto;
+    border: 3px solid #007bff; 
+    border-radius: 20px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); 
+    transition: transform 0.3s;
+}
+
+img:hover {
+    transform: scale(1.05); 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea {
+    background-color: #333;
+    color: white;
+    border: 1px solid #007bff;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #0056b3; 
+}
+
+
+
+samp{
+color: aqua;
+
+
+
+}
+
+
