@@ -1,71 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="descripton" content="portafolio personal">
-    <link rel="stylesheet" href="/portafolio/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/styles.css">
     <title>Portafolio | Jair Daniel</title>
 </head>
 
 <body>
     <header>
-    <h1>Jair Lastre</h1>
+        <h1>Jair Lastre</h1>
         <nav>
-        <ul> 
-            
+
+            <ul>
+
                 <li><a href="#Sobre Mi">Sobre Mi</a></li>
                 <li><a href="#Proyectos">Proyectos</a></li>
                 <li><a href="#Contacto">Contacto</a></li>
-        </ul>
+                <li><a href="/src/views/mascotas.html">Mascotas</a></li>
+
+            </ul>
         </nav>
 
-    
     </header>
-<section id="Sobre Mi"> 
-    <h2>Sobre Mi</h2>
-    <P> Soy una persona en constante crecimiento, enfocada en mejorar cada dia tanto a nivel personal como profesional.
-        Actualmente estudio programacion, donde desarrollo habilidades de logica y resolucion de problemas.
-    Me concidero diciplinado, perceverante y con una mentalidad orientada a cumplir mis <br> objetivos y dejar huella en futuro.</p>
-</section>
+    <section id="Sobre Mi">
+        <h2>Sobre Mi</h2>
+        <P> Soy una persona en constante crecimiento, enfocada en mejorar cada dia tanto a nivel personal como
+            profesional.
+            Actualmente estudio programacion, donde desarrollo habilidades de logica y resolucion de problemas.
+            Me concidero diciplinado, perceverante y con una mentalidad orientada a cumplir mis <br> objetivos y dejar
+            huella en futuro.</p>
+    </section>
 
-<section id="Proyectos">
-    <h2>proyectos </h2>
-    <p>Estos son algunos de los proyectos en los que he trabajado:
-    Si tienen dudas o les gustaría que trabajemos juntos, ¡escríbanme sin compromiso!"</p>
-    
-    <div class="contenedor-proyectos">
-        <article class="proyecto-1">
-            <a href="/portafolio/src/views/mascotas.html">Mis mascotas</a>
-            <p>Diseño de interfaz moderna enfocado en la experiencia <br>de usuario para dueños de animales domésticos.</p>
+    <section id="Proyectos">
+        <h2>proyectos </h2>
+        <p>Estos son algunos de los proyectos en los que he trabajado:
+            Si tienen dudas o les gustaría que trabajemos juntos, ¡escríbanme sin compromiso!"</p>
 
-        </article>
+        <div class="contenedor-proyectos">
+            <article class="proyecto-1">
+                <a href="/src/views/mascotas.html">Mis mascotas</a>
+                <p>Diseño de interfaz moderna enfocado en la experiencia <br>de usuario para dueños de animales
+                    domésticos.</p>
 
-        <article class="proyecto-2">
-            <p>proyecto-2 (proximamente)</p>
-        </article>
+            </article>
 
-        <article class="proyecto-3">
-            <p>proyecto-3 (proximamente)</p>
+            <article class="proyecto-2">
+                <p>proyecto-2 (proximamente)</p>
+            </article>
 
-        </article>
-    </div>
-</section>
+            <article class="proyecto-3">
+                <p>proyecto-3 (proximamente)</p>
 
-<section id="Contacto">
-    <h2>contacto</h2>
-    <form>
-        <label>Nombre:</label>
-        <input type="text" required placeholder="Ingresa Tu Nombre">
-        <label>Email:</label>
-        <input type="email" required placeholder="Ingresa Tu Email">
-        <label>Número de teléfono</label>
-        <input type="number" required placeholder="Ingresa Tu Número de teléfono">
-        <label>Mensaje</label>
-        <textarea type="mensaje" rows="4"></textarea>
-        <button type="submit">submit</button>
-    </form>
-</section>
+            </article>
+        </div>
+    </section>
+
+    <section id="Contacto">
+        <h2>contacto</h2>
+
+        <form class="formulario">
+            <input type="text" required placeholder="Ingresa Tu Nombre">
+            <input type="email" required placeholder="Ingresa Tu Email">
+            <input type="number" required placeholder="Ingresa Tu Número de teléfono">
+            <textarea type="mensaje" required placeholder="Ingresa un mensaje" rows="4"></textarea>
+            <button type="submit">submit</button>
+        </form>
+
+
+    </section>
+    <footer>
+        <p>© 2026 Proyecto/ Jair Lastre </p>
+    </footer>
+
 </body>
+
 </html>
 
