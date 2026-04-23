@@ -1,5 +1,12 @@
+/* --- CONFIGURACIÓN BASE --- */
+* {
+    box-sizing: border-box; /* Fundamental para simetría y medidas exactas */
+}
+
 ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -17,7 +24,7 @@ header {
     padding: 10px 40px;
     border-bottom: 2px solid #000000c0;
     display: flex;
-    justify-content: space-between; /* Ajustado para Task 2 */
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
@@ -31,6 +38,11 @@ header h1 {
     letter-spacing: 2px;
 }
 
+nav ul { 
+    display: flex;
+    gap: 15px;
+}
+
 nav a {
     color: #000000;
     text-decoration: none;
@@ -41,32 +53,15 @@ nav a {
     transition: 0.2s;
 }
 
-nav ul { 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around; /* AGREGADO: Distribución uniforme Task 2 */
-    list-style: none;  
-    padding: 0;
-    margin: 0;
-}
-
-a {
-    color: #0087D1;
-    text-decoration: none;
-}
-
 nav a:hover {
     background-color: #0087D1;
     color: #ffffff;
 }
 
-/* --- SECCIÓN PROYECTOS (ESTILO REJILLA ADIDAS) --- */
+/* --- SECCIÓN PROYECTOS --- */
 .contenedor-proyectos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas:
-        "principal principal lateral1"
-        "principal principal lateral2";
+    grid-template-columns: 1fr;
     gap: 15px;
     margin-top: 20px;
 }
@@ -75,65 +70,53 @@ nav a:hover {
     background-color: #f5f5f5;
     padding: 20px;
     border: 1px solid #ebebeb;
-    border-radius: 0;
-    box-shadow: none;
 }
 
-.proyecto-1 { grid-area: principal; }
-.proyecto-2 { grid-area: lateral1; }
-.proyecto-3 { grid-area: lateral2; }
-
-/* --- SECCIÓN MASCOTAS (COMBINACIÓN FLEX Y GRID TASK 4) --- */
+/* --- SECCIÓN MASCOTAS (Más juntas y compactas) --- */
 .mascotas {
-    display: flex;       /* AGREGADO: Flexbox inicial */
-    flex-wrap: wrap;     /* AGREGADO: Para que bajen las fotos */
-    gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: fit-content;
+    flex-wrap: wrap;
+    gap: 15px; /* Espacio reducido entre tarjetas */
     justify-content: center;
     padding: 20px;
-}
-
-/* Aplicamos Grid también para cumplir el requisito de combinar ambos */
-@media (min-width: 768px) {
-    .mascotas {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .mascotas article {
     background-color: #ffffff;
     border: 1px solid #000000;
     padding: 20px;
-    border-radius: 0;
-    color: #000000;
     transition: 0.3s;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: oblique;
     font-weight: 800;
-    font-size: large;
+    flex: 1 1 280px; /* Tamaño base flexible */
+    max-width: 900px; /* Evita que se separen mucho */
 }
 
 .img-container {
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1rem;
 }
 
 .img-container img {
-    height: 16rem;
-    width: 100%;        /* Ajustado para que llene el contenedor */
-    object-fit: cover;  /* AGREGADO: Para que no se estiren las fotos */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 /* --- ELEMENTOS GENERALES --- */
 section {
-    background-color: #ffffff;
-    border-bottom: 2px solid #000000c0;
-    margin: 40px auto;
-    padding: 25px;
-    max-width: 900px;
-    border: none;
+    padding: 40px 5%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 h2 {
@@ -142,94 +125,92 @@ h2 {
     display: inline-block;
     text-transform: uppercase;
     font-style: italic;
-}
-
-img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin: 15px auto;
-    border: none; 
-    border-radius: 0; 
-    filter: grayscale(20%);
-    transition: 0.3s;
-}
-
-img:hover {
-    transform: scale(1.02);
-    filter: grayscale(0%);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* AGREGADO: Sombra Task 4 */
-}
-
-/* --- BOTÓN Y FORMULARIO --- */
-button {
-    background-color: #000000;
-    color: #ffffff;
-    border: 1px solid #000000;
-    padding: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-input, textarea {
-    background-color: #ffffff;
-    color: #000000;
-    border: 1px solid #000000;
-    padding: 12px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 p {  
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: oblique;
     font-weight: 800;
-    font-size: large;
 }
 
-footer {
-    background-color: #ffffff;
-    color: #000000;
-    text-align: center;
-    padding: 7px;
-    margin-top: 30px;
-}
-
+/* --- FORMULARIO SIMÉTRICO --- */
 .formulario {
     display: grid;
-        grid-template-columns: 1fr 1fr; 
-    gap: 20px;
-    max-width: 800px;
-}
-input {
-    grid-column: 1; /* Todos en la primera columna */
-    padding: 10px;
-    border: 1px solid #ccc;
-    width: 315px;
+    grid-template-columns: 1fr;
+    gap: 15px;
 }
 
-/* Estilo para el área de mensaje */
-textarea {
-    grid-column: 2; /* En la segunda columna */
-    grid-row: 1 / 4; /* Ocupa el alto de los 3 inputs */
-    padding: 20px;
-    border: 1px solid #ccc;
-    width: 500px;
+input, textarea {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    padding: 15px;
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
 }
 
 button {
-    grid-column: 1 / 3; /* El botón ocupa todo el ancho abajo */
-    background: black;
-    color: white;
-    padding: 10px;
-    border: none;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px;
     cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    transition: 0.3s;
 }
+
+button:hover {
+    background-color: #0087D1;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* --- MEDIA QUERY (AJUSTES PARA PANTALLA GRANDE) --- */
+@media (min-width: 768px) {
+    /* Proyectos en Rejilla Adidas */
+    .contenedor-proyectos {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "principal principal lateral1"
+            "principal principal lateral2";
+    }
+    .proyecto-1 { grid-area: principal; }
+    .proyecto-2 { grid-area: lateral1; }
+    .proyecto-3 { grid-area: lateral2; }
+
+    /* Mascotas en 3 columnas ajustadas */
+    .mascotas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: fit-content;
+    }
+
+    /* Formulario Simétrico */
+    .formulario {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    input {
+        grid-column: 1;
+        height: 60px;
+    }
+
+    textarea {
+        grid-column: 2;
+        grid-row: 1 / 4;
+        height: 210px; /* Simetría: (60*3) + (15*2) */
+        resize: none;
+    }
+
+    button {
+        grid-column: 1 / 3;
+    }
+}
+
