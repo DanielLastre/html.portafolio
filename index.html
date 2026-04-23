@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="descripton" content="portafolio personal">
+    <meta name="description" content="portafolio personal">
     <link rel="stylesheet" href="./src/css/styles.css">
     <title>Portafolio | Jair Daniel</title>
 </head>
@@ -13,69 +13,58 @@
     <header>
         <h1>Jair Lastre</h1>
         <nav>
-
             <ul>
-
-                <li><a href="#Sobre Mi">Sobre Mi</a></li>
+                <!-- Ajusté los href para que coincidan con los ID (sin espacios) -->
+                <li><a href="#SobreMi">Sobre Mi</a></li>
                 <li><a href="#Proyectos">Proyectos</a></li>
                 <li><a href="#Contacto">Contacto</a></li>
-                <li><a href="/src/views/mascotas.html">Mascotas</a></li>
-
+                <li><a href="/src/views/mascotas.html" class="boton-azul">Mascotas</a></li>
             </ul>
         </nav>
-
     </header>
-    <section id="Sobre Mi">
+
+    <!-- Removí el espacio en el ID para que el enlace del menú funcione -->
+    <section id="SobreMi">
         <h2>Sobre Mi</h2>
-        <P> Soy una persona en constante crecimiento, enfocada en mejorar cada dia tanto a nivel personal como
-            profesional.
-            Actualmente estudio programacion, donde desarrollo habilidades de logica y resolucion de problemas.
-            Me concidero diciplinado, perceverante y con una mentalidad orientada a cumplir mis <br> objetivos y dejar
-            huella en futuro.</p>
+        <p>Soy una persona en constante crecimiento, enfocada en mejorar cada día tanto a nivel personal como profesional. Actualmente estudio programación, donde desarrollo habilidades de lógica y resolución de problemas. Me considero disciplinado, perseverante y con una mentalidad orientada a cumplir mis objetivos y dejar huella en el futuro.</p>
     </section>
 
     <section id="Proyectos">
-        <h2>proyectos </h2>
-        <p>Estos son algunos de los proyectos en los que he trabajado:
-            Si tienen dudas o les gustaría que trabajemos juntos, ¡escríbanme sin compromiso!"</p>
+        <h2>Proyectos</h2>
+        <p>Estos son algunos de los proyectos en los que he trabajado: Si tienen dudas o les gustaría que trabajemos juntos, ¡escríbanme sin compromiso!"</p>
 
         <div class="contenedor-proyectos">
             <article class="proyecto-1">
                 <a href="/src/views/mascotas.html">Mis mascotas</a>
-                <p>Diseño de interfaz moderna enfocado en la experiencia <br>de usuario para dueños de animales
-                    domésticos.</p>
-
+                <p>Diseño de interfaz moderna enfocado en la experiencia de usuario para dueños de animales domésticos.</p>
             </article>
 
             <article class="proyecto-2">
-                <p>proyecto-2 (proximamente)</p>
+                <p>Proyecto-2 (próximamente)</p>
             </article>
 
             <article class="proyecto-3">
-                <p>proyecto-3 (proximamente)</p>
-
+                <p>Proyecto-3 (próximamente)</p>
             </article>
         </div>
     </section>
 
     <section id="Contacto">
-        <h2>contacto</h2>
-
+        <h2>Contacto</h2>
         <form class="formulario">
-            <input type="text" required placeholder="Ingresa Tu Nombre">
-            <input type="email" required placeholder="Ingresa Tu Email">
-            <input type="number" required placeholder="Ingresa Tu Número de teléfono">
-            <textarea type="mensaje" required placeholder="Ingresa un mensaje" rows="4"></textarea>
-            <button type="submit">submit</button>
+            <input type="text" id="nombre" required placeholder="Ingresa Tu Nombre">
+            <input type="email" id="email" required placeholder="Ingresa Tu Email">
+            <input type="number" id="telefono" required placeholder="Ingresa Tu Número de teléfono">
+            <textarea id="mensaje" required placeholder="Ingresa un mensaje" rows="4"></textarea>
+            <button type="submit">Submit</button>
         </form>
-
-
     </section>
+
     <footer>
-        <p>© 2026 Proyecto/ Jair Lastre </p>
+        <p>© 2026 Proyecto / Jair Lastre</p>
     </footer>
 
+    <!-- CORRECCIÓN: Ruta del script sin la barra inicial si está en la misma carpeta -->
+    <script src="script.js"></script>
 </body>
-
 </html>
-
