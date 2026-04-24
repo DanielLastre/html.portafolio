@@ -1,8 +1,7 @@
 //* --- MENSAJE DE BIENVENIDA (TASK 5) --- */
 // Esta función se ejecuta automáticamente cuando la página termina de cargar
-window.onload = function() {
     alert("¡Bienvenido a mi portafolio, Jair Lastre!");
-};
+
 
 /* --- INTERACTIVIDAD DINÁMICA: MOSTRAR/OCULTAR Y CAMBIO DE TEXTO --- */
 // Función que controla la visibilidad de la información extra y modifica los textos
