@@ -1,0 +1,47 @@
+/* --- VARIABLES DE MARCA (:root) --- */
+/* Centralización de colores y fuentes para una gestión rápida del diseño */
+:root {
+    --adidas-blue: #0087D1;
+    --adidas-black: #000;
+    --adidas-white: #fff;
+    --fuente-deportiva: 'ITC Avant Garde Gothic', sans-serif;
+}
+
+/* --- AGRUPACIÓN DE ESTILOS COMUNES --- */
+/* Reglas compartidas para botones, enlaces y tarjetas para reducir código */
+nav a, button, .card-adidas {
+    transition: .3s ease;
+    text-decoration: none;
+}
+
+/* Efecto hover unificado: cambia el fondo a azul y el texto a blanco */
+nav a:hover, button:hover, .card-adidas:hover {
+    background-color: var(--adidas-blue) !important;
+    color: var(--adidas-white) !important;
+}
+
+/* --- SELECTORES SIMPLES (CLASES) --- */
+/* Estilo específico para los enlaces del menú usando una clase clara */
+.enlace-menu {
+    color: var(--adidas-black);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 10px;
+}
+
+/* Cambio de color al pasar el mouse sobre los enlaces del menú */
+.enlace-menu:hover {
+    background-color: var(--adidas-blue);
+    color: var(--adidas-white);
+}
+
+/* --- ESTILO DE TARJETAS (CARDS) --- */
+/* Diseño base para los contenedores de proyectos y mascotas */
+.card-adidas {
+    border: 1px solid var(--adidas-black);
+    padding: 20px;
+    background-color: var(--adidas-white);
+}
+
+
+

@@ -1,6 +1,50 @@
+/* --- VARIABLES GLOBALES (:root) --- */
+/* Definición de colores y fuentes institucionales para fácil mantenimiento */
+:root {
+    --adidas-blue: #0087D1;
+    --adidas-black: #000000;
+    --adidas-white: #ffffff;
+    --fuente-deportiva: 'ITC Avant Garde Gothic', sans-serif;
+}
+
+/* --- AGRUPACIÓN DE REGLAS COMUNES --- */
+/* Estilos compartidos para optimizar el código en enlaces y botones */
+nav a, button, .card-adidas {
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+/* Efecto visual al pasar el cursor (Hover) unificado en color azul Adidas */
+nav a:hover, button:hover, .card-adidas:hover {
+    background-color: var(--adidas-blue) !important;
+    color: var(--adidas-white) !important;
+}
+
+/* Estilos de estructura compartidos para elementos tipo bloque */
+button, .card-adidas {
+    border: 1px solid var(--adidas-black);
+    padding: 20px;
+    background-color: var(--adidas-white);
+}
+
+/* --- SELECTORES SIMPLES Y CLAROS --- */
+/* Clases independientes para mejorar la legibilidad y rendimiento del menú */
+.enlace-menu {
+    color: var(--adidas-black);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.enlace-menu:hover {
+    background-color: var(--adidas-blue);
+    color: var(--adidas-white);
+}
+
 /* --- CONFIGURACIÓN BASE --- */
+/* Reset de márgenes y box-sizing para asegurar medidas exactas */
 * {
-    box-sizing: border-box; /* Fundamental para simetría y medidas exactas */
+    box-sizing: border-box;
 }
 
 ul {
@@ -19,6 +63,7 @@ body {
 }
 
 /* --- HEADER ADIDAS --- */
+/* Barra de navegación superior con posición fija (sticky) */
 header {
     background-color: #ffffff; 
     padding: 10px 40px;
@@ -53,12 +98,8 @@ nav a {
     transition: 0.2s;
 }
 
-nav a:hover {
-    background-color: #0087D1;
-    color: #ffffff;
-}
-
 /* --- SECCIÓN PROYECTOS --- */
+/* Organización inicial de proyectos en una sola columna */
 .contenedor-proyectos {
     display: grid;
     grid-template-columns: 1fr;
@@ -72,13 +113,14 @@ nav a:hover {
     border: 1px solid #ebebeb;
 }
 
-/* --- SECCIÓN MASCOTAS (Más juntas y compactas) --- */
+/* --- SECCIÓN MASCOTAS --- */
+/* Galería de mascotas utilizando Grid para una cuadrícula compacta */
 .mascotas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: fit-content;
     flex-wrap: wrap;
-    gap: 15px; /* Espacio reducido entre tarjetas */
+    gap: 15px;
     justify-content: center;
     padding: 20px;
     max-width: 1200px;
@@ -93,10 +135,11 @@ nav a:hover {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: oblique;
     font-weight: 800;
-    flex: 1 1 280px; /* Tamaño base flexible */
-    max-width: 900px; /* Evita que se separen mucho */
+    flex: 1 1 280px;
+    max-width: 900px;
 }
 
+/* Contenedor de imágenes para mantener uniformidad en el tamaño */
 .img-container {
     width: 100%;
     height: 250px;
@@ -106,13 +149,6 @@ nav a:hover {
     align-items: center;
     margin: 10px 0;
 }
-.mascotas article h2 {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
 
 .img-container img {
     height: 100%;
@@ -121,6 +157,7 @@ nav a:hover {
 }
 
 /* --- ELEMENTOS GENERALES --- */
+/* Espaciado y estilos comunes para títulos y párrafos */
 section {
     padding: 40px 5%;
     max-width: 1000px;
@@ -142,7 +179,8 @@ p {
     font-weight: 800;
 }
 
-/* --- FORMULARIO SIMÉTRICO --- */
+/* --- FORMULARIO --- */
+/* Diseño del área de contacto con entradas de texto y botón */
 .formulario {
     display: grid;
     grid-template-columns: 1fr;
@@ -159,30 +197,9 @@ input, textarea {
     outline: none;
 }
 
-button {
-    background-color: #000000;
-    color: #ffffff;
-    padding: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    border: none;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #0087D1;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-/* --- MEDIA QUERY (AJUSTES PARA PANTALLA GRANDE) --- */
+/* --- MEDIA QUERIES (ADAPTABILIDAD) --- */
+/* Ajustes para pantallas grandes (Escritorio) */
 @media (min-width: 768px) {
-    /* Proyectos en Rejilla Adidas */
     .contenedor-proyectos {
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas:
@@ -193,85 +210,69 @@ footer {
     .proyecto-2 { grid-area: lateral1; }
     .proyecto-3 { grid-area: lateral2; }
 
-    /* Mascotas en 3 columnas ajustadas */
     .mascotas {
-        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        width: fit-content;
     }
 
-    /* Formulario Simétrico */
     .formulario {
         grid-template-columns: 1fr 1fr;
     }
 
-    input {
-        grid-column: 1;
-        height: 60px;
-    }
-
-    textarea {
-        grid-column: 2;
-        grid-row: 1 / 4;
-        height: 210px; /* Simetría: (60*3) + (15*2) */
-        resize: none;
-    }
-
-    button {
-        grid-column: 1 / 3;
-    }
+    input { grid-column: 1; height: 60px; }
+    textarea { grid-column: 2; grid-row: 1 / 4; height: 210px; resize: none; }
+    button { grid-column: 1 / 3; }
 }
 
-
-a {
-    color: inherit;
-    text-decoration: none;
-
-}
-a:hover {
-    background-color: #0087D1;
-    color: #ffffff;       /* Quita el azul y usa el color del texto del padre */
-    text-decoration: none; /* Quita el subrayado que ves en la imagen */
-}
-/* --- ESTO ARREGLA LA ADAPTACIÓN (TASK 2) --- */
-
-/* 1. Ajuste para Móviles (Menú y 1 columna) */
+/* Ajustes para pantallas pequeñas (Móviles) */
 @media (max-width: 599px) {
-    header {
-        flex-direction: column; /* Menú en vertical */
-        text-align: center;
-    }
-    nav ul {
-        flex-direction: column; 
-        gap: 10px;
-        margin-top: 10px;
-    }
-    .contenedor-proyectos {
-        grid-template-columns: 1fr !important; /* 1 columna obligatoria */
-        grid-template-areas: none !important; /* Quita el diseño complejo en móvil */
-    }
-    .formulario {
-        grid-template-columns: 1fr !important;
-    }
-    textarea {
-        grid-column: 1 !important;
-        grid-row: auto !important;
-    }
+    header { flex-direction: column; text-align: center; }
+    nav ul { flex-direction: column; gap: 10px; margin-top: 10px; }
+    .contenedor-proyectos { grid-template-columns: 1fr !important; grid-template-areas: none !important; }
 }
 
-/* 2. Ajuste para Tablets (2 columnas en proyectos y 3 en mascotas) */
+/* Ajustes para pantallas medianas (Tablets) */
 @media (min-width: 600px) and (max-width: 1023px) {
-    .contenedor-proyectos {
-        grid-template-columns: repeat(2, 1fr) !important;
-        grid-template-areas: none !important;
-    }
-    .mascotas {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
+    .contenedor-proyectos { grid-template-columns: repeat(2, 1fr) !important; }
+    .mascotas { grid-template-columns: repeat(3, 1fr) !important; }
 }
 
-/* 3. Ajuste para Imágenes (TASK 3) */
+/* Ajuste de imágenes responsivas */
 img {
     max-width: 100%;
     height: auto;
+}
+/* --- ESTILO DE PROYECTOS (VUELVE AL GRIS CLARO) --- */
+
+.card-adidas {
+    background-color: #f5f5f5 !important; /* Gris claro de Adidas */
+    color: #000000 !important;           /* Texto negro */
+    border: 1px solid #ebebeb;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+/* El título del proyecto en negro */
+.card-adidas a {
+    color: #000000 !important;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* SOLO cambia a azul cuando pasas el mouse */
+.card-adidas:hover {
+    background-color: var(--adidas-blue) !important;
+    color: #ffffff !important;
+}
+
+/* Asegura que el texto dentro sea blanco al pasar el mouse */
+.card-adidas:hover p, 
+.card-adidas:hover a {
+    color: #ffffff !important;
+}
+/* --- PIE DE PÁGINA (FOOTER) --- */
+footer {
+    text-align: center; /* Esto centra el texto horizontalmente */
+    padding: 20px;
+    margin-top: 40px;
+    width: 100%;       /* Asegura que ocupe todo el ancho para poder centrar */
 }

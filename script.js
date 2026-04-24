@@ -1,23 +1,31 @@
-// cambiar texto
-function toggleInfo() {
-    // 1. Intentamos encontrar el elemento por su ID
-    var info = document.getElementById("extra-info");
-    var boton = document.querySelector(".btn");
+//* --- MENSAJE DE BIENVENIDA (TASK 5) --- */
+// Esta función se ejecuta automáticamente cuando la página termina de cargar
+window.onload = function() {
+    alert("¡Bienvenido a mi portafolio, Jair Lastre!");
+};
 
-    // 2. Verificamos si el elemento existe antes de cambiarlo
-    if (info) {
-        if (info.style.display === "none" || info.style.display === "") {
-            info.style.display = "block";       // Lo muestra
-            boton.textContent = "MOSTRAR MENOS"; // Cambia el texto
-        } else {
-            info.style.display = "none";        // Lo oculta
-            boton.textContent = "MOSTRAR MÁS";  // Vuelve al original
-        }
+/* --- INTERACTIVIDAD DINÁMICA: MOSTRAR/OCULTAR Y CAMBIO DE TEXTO --- */
+// Función que controla la visibilidad de la información extra y modifica los textos
+function toggleInfo() {
+    // Selección de elementos del DOM mediante sus IDs y clases
+    const extraInfo = document.getElementById("extra-info"); // Párrafo oculto inicialmente
+    const principal = document.getElementById("texto-principal"); // Párrafo de introducción
+    const btn = document.querySelector(".btn"); // Botón que activa la función
+
+    /* --- LÓGICA DE INTERCAMBIO (TOGGLE) --- */
+    if (extraInfo.style.display === "none") {
+        // ACCIÓN: Mostrar el contenido y actualizar mensajes
+        extraInfo.style.display = "block";
+        btn.textContent = "Mostrar menos";
+        
+        // Cambio dinámico del texto del párrafo principal
+        principal.textContent = "¡Gracias por interesarte en mi perfil!";
     } else {
-        console.log("Error: No encontré el ID 'extra-info'");
+        // ACCIÓN: Ocultar el contenido y restablecer textos originales
+        extraInfo.style.display = "none";
+        btn.textContent = "Mostrar más";
+        
+        // Retorno al texto base del párrafo principal
+        principal.textContent = "Soy una persona en constante crecimiento, enfocada en mejorar cada día tanto a nivel personal como profesional.";
     }
 }
-// mensaje de bienvenido
-window.onload = function(){
-    this.alert("bienvenido a mi portafolio")
-};
